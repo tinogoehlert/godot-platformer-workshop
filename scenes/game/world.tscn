@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://cl5wo1sigtjsm"]
+
+[ext_resource type="Script" uid="uid://g1caqwwqfs6c" path="res://scripts/game/world.gd" id="1_t4al5"]
+[ext_resource type="TileSet" uid="uid://dni0kb3eqrv40" path="res://resources/env_tileset.tres" id="3_d8brc"]
+[ext_resource type="Script" uid="uid://dmyl4eghnikfl" path="res://scripts/ui/death_screen.gd" id="5_q5tta"]
+[ext_resource type="FontFile" uid="uid://cyad3bt0lheij" path="res://artwork/fonts/CompassGold.otf" id="5_w1nur"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v6u34"]
+font = ExtResource("5_w1nur")
+font_size = 64
+outline_size = 11
+outline_color = Color(0.28257647, 0.35454252, 0.6558719, 1)
+shadow_size = 24
+shadow_color = Color(0.019607844, 0.019607844, 0.019607844, 0.7411765)
+
+[node name="World" type="Node2D" unique_id=132365033]
+script = ExtResource("1_t4al5")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=697850476]
+zoom = Vector2(2, 2)
+
+[node name="Environment" type="TileMapLayer" parent="." unique_id=1349264241]
+light_mask = 3
+tile_set = ExtResource("3_d8brc")
+
+[node name="Decals" type="TileMapLayer" parent="Environment" unique_id=1546572534]
+light_mask = 3
+tile_set = ExtResource("3_d8brc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1005609485]
+visible = false
+
+[node name="DeathScreen" type="ColorRect" parent="CanvasLayer" unique_id=501750371]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.061266378, 0.11141523, 0.16359547, 0.6901961)
+script = ExtResource("5_q5tta")
+
+[node name="Label" type="Label" parent="CanvasLayer/DeathScreen" unique_id=454223033]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "YOU DIED"
+label_settings = SubResource("LabelSettings_v6u34")
+horizontal_alignment = 1
+vertical_alignment = 1

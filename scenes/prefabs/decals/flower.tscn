@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bgjr1vydfe3lx"]
+
+[ext_resource type="Texture2D" uid="uid://bg0ycpt1ug6q5" path="res://artwork/environment/tileset.png" id="1_tc6jp"]
+[ext_resource type="Texture2D" uid="uid://d3cthf382o7su" path="res://artwork/vfx/light_masks/shape_a.png" id="2_a8ok4"]
+
+[node name="Shroom" type="Node2D" unique_id=1970060697]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=509153741]
+texture = ExtResource("1_tc6jp")
+region_enabled = true
+region_rect = Rect2(32, 96, 16, 16)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1516543714]
+color = Color(0.8324941, 0.6861596, 0.69770217, 1)
+energy = 1.43
+texture = ExtResource("2_a8ok4")
+texture_scale = 0.2
