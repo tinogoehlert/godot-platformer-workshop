@@ -37,6 +37,7 @@ class_name Player extends CharacterBody2D
 @export var fall_gravity_multiplier: float = 1.6
 
 @onready var sprite: AnimatedSprite2D = $Sprite
+@onready var walk_dust:CPUParticles2D = $WalkDustParticles
 @onready var camera: Camera2D = get_viewport().get_camera_2d()
 
 
@@ -139,6 +140,7 @@ func _update_animations(_delta: float) -> void:
 		else:
 			sprite.play("run")
 			sprite.flip_h = velocity.x < 0
+			walk_dust.emitting = true
 	else:
 		if velocity.y > 0:
 			sprite.play("jump")

@@ -62,6 +62,7 @@ tile_set = ExtResource("4_qv50b")
 color = Color(0.1254217, 0.17047882, 0.2188451, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1005609485]
+visible = false
 
 [node name="DeathScreen" type="ColorRect" parent="CanvasLayer" unique_id=501750371]
 anchors_preset = 15

@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://cqe8bjluuvqhv" path="res://scripts/game/player.gd" id="1_tou0u"]
 [ext_resource type="Texture2D" uid="uid://d3cthf382o7su" path="res://artwork/vfx/light_masks/shape_a.png" id="3_n0leu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6u34"]
-size = Vector2(9, 16)
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n0leu"]
+light_mode = 1
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xtlg4"]
 atlas = ExtResource("1_06qtw")
@@ -156,17 +156,36 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6u34"]
+size = Vector2(9, 16)
+
 [node name="Player" type="CharacterBody2D" unique_id=1477048039]
 script = ExtResource("1_tou0u")
+
+[node name="WalkDustParticles" type="CPUParticles2D" parent="." unique_id=597696774]
+position = Vector2(1, 0)
+emitting = false
+amount = 6
+lifetime = 0.03
+one_shot = true
+speed_scale = 0.5
+explosiveness = 0.2
+emission_shape = 1
+emission_sphere_radius = 1.6
+direction = Vector2(-1, -1)
+gravity = Vector2(0, -980)
+scale_amount_min = 1.5
+scale_amount_max = 2.0
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1270158330]
+material = SubResource("CanvasItemMaterial_n0leu")
+position = Vector2(1, -16)
+sprite_frames = SubResource("SpriteFrames_v6u34")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1973734985]
 position = Vector2(1.5, -8)
 shape = SubResource("RectangleShape2D_v6u34")
-
-[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1270158330]
-position = Vector2(1, -16)
-sprite_frames = SubResource("SpriteFrames_v6u34")
-animation = &"idle"
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1370330198]
 texture_filter = 1
