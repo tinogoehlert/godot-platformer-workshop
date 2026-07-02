@@ -1,8 +1,11 @@
 class_name World extends Node2D
 
+@onready var cm = $CanvasModulate
+@onready var cl = $CanvasLayer
+
 func _ready():
-	if $CanvasModulate != null: $CanvasModulate.visible = true
-	if $CanvasModulate != null: $CanvasLayer.visible = true
+	if cm != null: cm.visible = true
+	if cl != null: cl.visible = true
 	Globals.restart_game.connect(_restart)
 	
 

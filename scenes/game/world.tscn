@@ -27,6 +27,8 @@ tile_set = ExtResource("3_d8brc")
 light_mask = 3
 tile_set = ExtResource("3_d8brc")
 
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=561709821]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1005609485]
 visible = false
 
